@@ -10,7 +10,6 @@
 import { Component, Vue } from "vue-property-decorator";
 import News from "@/components/News.vue"; // @ is an alias to /src
 // import { namespace } from "vuex-class";
-import { userModule } from "@/store/message";
 import { newsModule } from "@/store/news";
 import Iarticle from "@/interafces/news-articles";
 @Component({
@@ -20,7 +19,7 @@ import Iarticle from "@/interafces/news-articles";
   },
 })
 export default class Home extends Vue {
-  async created() {
+  async created(): Promise<any> {
     console.log("inside created");
     await newsModule.loadNews();
   }
@@ -29,4 +28,11 @@ export default class Home extends Vue {
   }
 }
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.container {
+  display: flex;
+
+  margin: 2% auto 0 auto;
+  justify-content: center;
+}
+</style>

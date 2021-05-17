@@ -1,32 +1,47 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">Leagues</router-link>
-    </div>
-    <router-view />
+    <Navbar />
+
+    <main class="main">
+      <router-view />
+    </main>
+    <footer></footer>
   </div>
 </template>
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import Navbar from "@/components/Navbar.vue";
 
-<style lang="scss">
+@Component({
+  name: "Collapsible",
+  components: {
+    Navbar,
+  },
+})
+export default class App extends Vue {}
+</script>
+
+<style lang="css">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  height: 100%;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.main {
+  display: flex;
+  flex-direction: row;
+  margin: 2% auto 0 auto;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 </style>
