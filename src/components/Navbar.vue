@@ -12,7 +12,7 @@
             <router-link to="/leagues">Leagues</router-link>
           </li>
           <li>
-            <router-link to="/about">Signin</router-link>
+            <router-link to="/form">Signin</router-link>
           </li>
         </ul>
       </nav>

@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
-import Stats from "@/components/Stats.vue"
+import Form from '@/views/Form.vue'
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
@@ -11,16 +11,20 @@ const routes: Array<RouteConfig> = [
     component: Home,
   },
   {
+    path: "/form",
+    name: "Form",
+    component: Form,
+  },
+  {
     path: "/leagues",
     name: "Leagues",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     components: {
-      default:() =>
-      import(/* webpackChunkName: "about" */ "../views/Leagues.vue"),
-      stats:Stats
-    }
+      default: () =>
+        import(/* webpackChunkName: "about" */ "../views/Leagues.vue"),
+    },
   },
 ];
 

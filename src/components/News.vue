@@ -42,7 +42,7 @@ export default class News extends Vue {
   align-self: center;
   justify-self: center;
   width: 100%;
-  font-size:80%;
+  font-size: 80%;
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
