@@ -3,17 +3,18 @@ interface Iteam {
   uid: string;
   location: string;
   name: string;
-  abbrevation: string;
+  abbreviation: string;
   displayName: string;
   shortDisplayName: string;
   isActive: boolean;
 }
 interface Istats {
   name: string;
-  dislayName: string;
+  displayName: string;
   shortDisplayName: string;
-  abbrevation: string;
+  abbreviation: string;
   type: string;
+  description: string;
   value: number;
   displayValue: string;
 }
@@ -22,8 +23,16 @@ interface Inote {
   description: string;
   rank: number;
 }
-export default interface IStandings {
+interface IStandings {
   team: Iteam;
   note: Inote;
   stats: Istats[];
 }
+interface URL {
+  PremierLeague: string;
+  Laliga: string;
+  Ligue1: string;
+  Bundesliga: string;
+  SerieA: string;
+}
+export { IStandings, URL };

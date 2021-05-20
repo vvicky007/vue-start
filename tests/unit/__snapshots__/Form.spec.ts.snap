@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form.vue Should match the snapshot 1`] = `
+<div class="panel">
+  <form action="" novalidate="novalidate" class="form">
+    <div><label for="email">Email</label> <input type="email" name="email" id="email" style="border: 2px solid red;"></div>
+    <div><label for="pwd">Password</label> <input type="password" name="pwd" id="pwd"></div> <button>Submit</button>
+  </form>
+</div>
+`;

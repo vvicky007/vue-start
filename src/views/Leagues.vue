@@ -100,7 +100,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { leaguesModule } from "@/store/leagues";
-import IStandings from "@/interafces/league-standings";
+import { IStandings } from "@/interafces/league-standings";
 import PointsTable from "@/components/pointsTable.vue";
 import Stats from "@/components/Stats.vue";
 import Ileader from "@/interafces/stats";
@@ -119,8 +119,8 @@ export default class Leagues extends Vue {
     await leaguesModule.loadLeagues(this.selected);
     this.standings = leaguesModule.standings;
     await leaguesModule.loadStats(this.selected);
-    this.stats = leaguesModule.stats.splice(0, 20);
-    console.log(this.stats);
+    this.stats = leaguesModule.stats.splice(0, 20)
+    
   }
   async loadStandings(league: string): Promise<any> {
     this.selected = league;

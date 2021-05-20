@@ -25,9 +25,6 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 export default class News extends Vue {
   @Prop() private msg!: string;
   @Prop() private articles!: Iarticle[];
-  created() {
-    console.log("inside news");
-  }
 }
 </script>
 

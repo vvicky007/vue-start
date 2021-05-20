@@ -3,6 +3,7 @@ interface Iathlete {
   uid: string;
   displayName: string;
   shortName: string;
+  guid: string;
 }
 export default interface Ileader {
   value: number;

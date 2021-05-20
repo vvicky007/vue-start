@@ -1,15 +1,9 @@
 import { VuexModule, Module, Mutation, Action } from "vuex-class-modules";
 import { getStandings } from "@/api/leagues";
-import getStats from "@/api/stats";
-import IStandings from "@/interafces/league-standings";
+import { getStats } from "@/api/stats";
+import { IStandings, URL } from "@/interafces/league-standings";
 import Ileader from "@/interafces/stats";
-interface URL {
-  PremierLeague: string;
-  Laliga: string;
-  Ligue1: string;
-  Bundesliga: string;
-  SerieA: string;
-}
+
 @Module()
 class LeaguesModule extends VuexModule {
   // state
@@ -40,7 +34,6 @@ class LeaguesModule extends VuexModule {
   @Mutation
   setLeagues(standings: IStandings[]) {
     this.standings = standings;
-    console.log(this.standings);
   }
 
   // actions
@@ -55,7 +48,6 @@ class LeaguesModule extends VuexModule {
   }
   @Action
   async loadStats(key: keyof URL) {
-    console.log(this.stats_url[key]);
     const stats: Ileader[] = await getStats(this.stats_url[key]);
     this.setStats(stats);
   }

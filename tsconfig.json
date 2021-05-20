@@ -34,7 +34,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-  ],
+, "tests/unit/api/getStats.spec.ts"  ],
   "exclude": [
     "node_modules"
   ]

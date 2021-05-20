@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar.vue should match the snapshot 1`] = `
+<header>
+  <div>
+    <div class="header"><span vif="open">Collapse</span></div>
+    <nav id="nav">
+      <h1>Feel Football</h1>
+      <ul class="nav-list-items">
+        <li><a href="/" aria-current="page" class="router-link-exact-active router-link-active">Home</a></li>
+        <li><a href="/leagues" class="">Leagues</a></li>
+        <li><a href="/form" class="">Signin</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+`;

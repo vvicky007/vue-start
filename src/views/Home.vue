@@ -20,7 +20,6 @@ import Iarticle from "@/interafces/news-articles";
 })
 export default class Home extends Vue {
   async created(): Promise<any> {
-    console.log("inside created");
     await newsModule.loadNews();
   }
   getNews(): Iarticle[] {

@@ -1,4 +1,5 @@
-import IStandings from "@/interafces/league-standings";
+import { IStandings } from "@/interafces/league-standings";
+import fetch from 'node-fetch';
 async function getStandings(url: string): Promise<IStandings[]> {
   try {
     const resp = await fetch(url);
@@ -8,4 +9,5 @@ async function getStandings(url: string): Promise<IStandings[]> {
     return [];
   }
 }
+
 export { getStandings };

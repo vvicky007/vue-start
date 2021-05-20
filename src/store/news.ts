@@ -16,8 +16,6 @@ class NewsModule extends VuexModule {
   @Mutation
   setNews(articles: Iarticle[]) {
     this.news = articles;
-    console.log("inside mut");
-    console.log(this.news);
   }
 
   // actions

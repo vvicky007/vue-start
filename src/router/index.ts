@@ -1,9 +1,8 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
-import Form from '@/views/Form.vue'
+import Form from "@/views/Form.vue";
 Vue.use(VueRouter);
-
 const routes: Array<RouteConfig> = [
   {
     path: "/",
@@ -33,5 +32,5 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
-
+export { routes };
 export default router;

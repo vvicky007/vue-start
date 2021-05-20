@@ -23,10 +23,10 @@
           {{ standing.stats[6].value }}
         </td>
         <td>
-          {{ standing.stats[6].value }}
+          {{ standing.stats[0].value }}
         </td>
         <td>
-          {{ standing.stats[6].value }}
+          {{ standing.stats[1].value }}
         </td>
       </tr>
       <br />
@@ -34,7 +34,7 @@
   </div>
 </template>
 <script lang="ts">
-import IStandings from "@/interafces/league-standings";
+import { IStandings } from "@/interafces/league-standings";
 import { Component, Prop, Vue } from "vue-property-decorator";
 @Component
 export default class PointsTable extends Vue {
