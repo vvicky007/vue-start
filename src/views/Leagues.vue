@@ -88,6 +88,7 @@
   border-radius: 10px;
   color: #000;
   box-shadow: 10px 5px 5px black;
+  padding: 4px;
 }
 
 .leaguepanel {
@@ -99,8 +100,8 @@
 </style>
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { leaguesModule } from "@/store/leagues";
-import { IStandings } from "@/interafces/league-standings";
+import { IStandings, URL } from "@/interafces/league-standings";
+import { leaguesStore } from "@/store";
 import PointsTable from "@/components/pointsTable.vue";
 import Stats from "@/components/Stats.vue";
 import Ileader from "@/interafces/stats";
@@ -113,21 +114,20 @@ import Ileader from "@/interafces/stats";
 })
 export default class Leagues extends Vue {
   standings: IStandings[] = [];
-  selected = "PremierLeague";
+  selected: keyof URL = "PremierLeague";
   stats: Ileader[] = [];
   async created(): Promise<any> {
-    await leaguesModule.loadLeagues(this.selected);
-    this.standings = leaguesModule.standings;
-    await leaguesModule.loadStats(this.selected);
-    this.stats = leaguesModule.stats.splice(0, 20)
-    
+    await leaguesStore.loadLeagues(this.selected);
+    this.standings = leaguesStore.Standings;
+    await leaguesStore.loadStats(this.selected);
+    this.stats = leaguesStore.Stats.splice(0, 20);
   }
-  async loadStandings(league: string): Promise<any> {
+  async loadStandings(league: keyof URL): Promise<any> {
     this.selected = league;
-    await leaguesModule.loadLeagues(this.selected.trim());
-    this.standings = leaguesModule.standings;
-    await leaguesModule.loadStats(this.selected.trim());
-    this.stats = leaguesModule.stats.splice(0, 20);
+    await leaguesStore.loadLeagues(this.selected);
+    this.standings = [...leaguesStore.standings];
+    await leaguesStore.loadStats(this.selected);
+    this.stats = leaguesStore.Stats.splice(0, 20);
   }
 }
 </script>

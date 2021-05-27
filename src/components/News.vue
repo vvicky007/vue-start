@@ -1,13 +1,20 @@
 <template>
   <div class="content">
     <div v-for="(article, index) in articles" :key="index" class="article">
-      <div class="card">
-        <img
-          class="card-img-top"
-          v-if="article.images.length > 0"
-          :src="article.images[0].url"
-          alt="Card image cap"
-        />
+      <div class="card" v-if="article != undefined">
+        <div
+          v-if="
+            article != undefined &&
+            article.images.length > 0 &&
+            article.images[0] != undefined
+          "
+        >
+          <img
+            class="card-img-top"
+            :src="article.images[0].url"
+            alt="Card image cap"
+          />
+        </div>
         <div class="card-body">
           <h3 class="card-title">{{ article.headline }}</h3>
           <p class="card-text">{{ article.description }}</p>

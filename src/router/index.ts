@@ -2,6 +2,31 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
 import Form from "@/views/Form.vue";
+import Signin from '@/components/Signin.vue'
+import Signup from '@/components/Signup.vue'
+import Profile from '@/views/Profile.vue'
+
+import Auth from '@/firebase/init'
+const requiredAuth = (to:any,from:any,next:any)=>{
+   Auth.onAuthStateChanged((u)=>{
+    if(!u){
+      next()
+    }
+    else{
+      next('/')
+    }
+  })
+}
+const requiredAuthProfile = (to:any,from:any,next:any)=>{
+  Auth.onAuthStateChanged((u)=>{
+    if(u){
+      next()
+    }
+    else{
+      next('/')
+    }
+  })
+}
 Vue.use(VueRouter);
 const routes: Array<RouteConfig> = [
   {
@@ -10,9 +35,27 @@ const routes: Array<RouteConfig> = [
     component: Home,
   },
   {
+    path: "/profile",
+    name: "Profile",
+    component: Profile,
+    beforeEnter:requiredAuthProfile
+  },
+  {
     path: "/form",
     name: "Form",
     component: Form,
+    beforeEnter:requiredAuth,
+    children:[
+      {
+        path:'/signin',
+        component:Signin,
+      },
+      {
+        path:'/signup',
+        component:Signup,
+      }
+      
+    ]
   },
   {
     path: "/leagues",
@@ -24,6 +67,11 @@ const routes: Array<RouteConfig> = [
       default: () =>
         import(/* webpackChunkName: "about" */ "../views/Leagues.vue"),
     },
+  },
+  {
+    path: "/*",
+    name: "Home",
+    component: Home
   },
 ];
 

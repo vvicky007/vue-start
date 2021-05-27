@@ -1,9 +1,9 @@
 export default function (element: HTMLElement, binding: any) {
   if (binding.value.type == "email") {
     if (!binding.value.val.includes("@")) {
-      element.style.border = "2px solid red";
+      element.classList.add("invalid");
     } else {
-      element.style.border = "";
+      element.classList.remove("invalid");
     }
   }
 }

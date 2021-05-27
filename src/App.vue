@@ -10,17 +10,23 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Navbar from "@/components/Navbar.vue";
-
 @Component({
   name: "Collapsible",
   components: {
     Navbar,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+
+}
 </script>
 
 <style lang="css">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 #app {
   font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
@@ -38,7 +44,7 @@ export default class App extends Vue {}
 .main {
   display: flex;
   flex-direction: row;
-  margin: 2% auto 0 auto;
+  margin: 8% auto 0 auto;
   justify-content: center;
   width: 100%;
   height: 100%;

@@ -1,8 +1,9 @@
-import { VuexModule, Module, Mutation, Action } from "vuex-class-modules";
+import { Module, VuexModule, Mutation, Action } from "vuex-module-decorators";
 import { getNews } from "@/api/news";
 import Iarticle from "@/interafces/news-articles";
-@Module()
-class NewsModule extends VuexModule {
+import store from "@/store";
+@Module({ name: "news", namespaced: true, store })
+export default class NewsModule extends VuexModule {
   // state
   news: Iarticle[] = [];
   url = [
@@ -19,14 +20,9 @@ class NewsModule extends VuexModule {
   }
 
   // actions
-  @Action
+  @Action({ commit: "setNews" })
   async loadNews() {
     const articles: any = await getNews(this.url);
-    this.setNews(articles);
+    return articles;
   }
 }
-
-// register module (could be in any file)
-import store from "@/store/store";
-export const newsModule: any = new NewsModule({ store, name: "news" });
-// export default UserModule

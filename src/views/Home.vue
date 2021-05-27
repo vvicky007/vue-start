@@ -10,8 +10,9 @@
 import { Component, Vue } from "vue-property-decorator";
 import News from "@/components/News.vue"; // @ is an alias to /src
 // import { namespace } from "vuex-class";
-import { newsModule } from "@/store/news";
+import { newsStore } from "@/store";
 import Iarticle from "@/interafces/news-articles";
+import { firebaseStore } from "@/store";
 @Component({
   name: "Home",
   components: {
@@ -20,10 +21,10 @@ import Iarticle from "@/interafces/news-articles";
 })
 export default class Home extends Vue {
   async created(): Promise<any> {
-    await newsModule.loadNews();
+    await newsStore.loadNews();
   }
   getNews(): Iarticle[] {
-    return newsModule.news;
+    return newsStore.news;
   }
 }
 </script>

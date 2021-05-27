@@ -8,13 +8,17 @@
           <li>
             <router-link to="/">Home</router-link>
           </li>
-          <li>
-            <router-link to="/leagues">Leagues</router-link>
+          <li >
+            <router-link to="/leagues" @click="ClickedLeagues($event)">Leagues</router-link>
           </li>
-          <li>
-            <router-link to="/form">Signin</router-link>
+          <li v-if="!getAuthenticity()">
+            <router-link to="/form" >Signin</router-link>
+          </li>
+           <li v-if="getAuthenticity()">
+            <router-link to="/profile" v-if="getAuthenticity">Profile</router-link>
           </li>
         </ul>
+        <button @click="logOut" >LogOut</button>
       </nav>
     </Collapsible>
   </header>
@@ -22,24 +26,43 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import Collapsible from "@/shared/collapsible.vue";
+import { firebaseStore } from "@/store";
 @Component({
   name: "Navbar",
   components: {
     Collapsible,
   },
 })
-export default class Navbar extends Vue {}
+export default class Navbar extends Vue {
+  isAuthenticated = firebaseStore.user
+  created(){
+    firebaseStore.getUserOnChange()
+  }
+  getAuthenticity():boolean{
+    this.isAuthenticated = firebaseStore.user
+    return this.isAuthenticated != null
+  }
+  
+  async logOut(){
+    await firebaseStore.logOut()
+    this.$router.push('/')
+  }
+  ClickedLeagues(e:Event):void{
+    console.log('sad')
+   
+  }
+}
 </script>
 <style>
 #nav {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   display: flex;
   flex-direction: row;
   align-items: center;
   background: #343a40;
   color: #fff;
   width: 100%;
+  height: 80px;
 }
 #nav > h1 {
   font-size: 30px;

@@ -1,69 +1,66 @@
-import { shallowMount, Wrapper,createLocalVue } from "@vue/test-utils";
-import sinon from "sinon";
+import { shallowMount, Wrapper, createLocalVue, mount } from "@vue/test-utils";
+import sinon, { SinonSandbox } from "sinon";
 import * as leagues_api from "@/api/leagues";
 import * as stats_api from "@/api/stats";
 import Vuex from "vuex";
-import { IStandings } from '@/interafces/league-standings'
+import statsData from "../mockdata/stats_mock";
 import Leagues from "@/views/Leagues.vue";
 import mockData from "../mockdata/leagues";
-import statsData from "../mockdata/stats";
 import stats from "@/interafces/stats";
-let localVue = createLocalVue()
-localVue.use(Vuex)
+const m = [...statsData];
+const x = statsData;
+const localVue = createLocalVue();
+function flushQueue() {
+  return new Promise((resolve) => setTimeout(resolve, 0));
+}
+localVue.use(Vuex);
+const getters = {
+  loadLeagues: jest.fn(),
+};
+const actions = {
+  loadLeagues: jest.fn(),
+};
 const store = new Vuex.Store({
-  modules:{
-    leagues:{
-      namespaced:true,
-      actions:{
-        loadLeagues: jest.fn(),
-        loadStats: jest.fn(),
-      },
-      mutations:{
-        setStats:jest.fn(),
-        setLeagues:jest.fn(),
-      }
-    }
+  modules: {
+    leagues: {
+      actions,
+      getters,
+    },
   },
-  
-})
+});
 describe("Home.vue", () => {
-  let wrapper: Wrapper<Leagues>, stub:sinon.SinonStub<[url: string], Promise<IStandings[]>>,statsStub: sinon.SinonStub<[url: string], Promise<stats[]>>
-  beforeEach(() => {
+  let wrapper: Wrapper<Leagues>, stub, statsStub;
+  beforeEach(async () => {
     stub = sinon.stub(leagues_api, "getStandings");
     stub.returns(Promise.resolve(mockData));
     statsStub = sinon.stub(stats_api, "getStats");
-    statsStub.returns(Promise.resolve(statsData));
-    wrapper = shallowMount(Leagues);
+    statsStub.resolves(statsData);
+    wrapper = shallowMount(Leagues, { localVue, store });
   });
   afterEach(() => {
     sinon.restore();
   });
   it("Home Component render, call api as the component gets created", async () => {
-        expect(wrapper.vm.$data.selected).toEqual('PremierLeague')
-        await wrapper.vm.$nextTick()
-        expect(wrapper.vm.$data.standings).toEqual(mockData)
-        expect(stub.calledOnce).toBe(true)
-        console.log(stub.calledOnce)
-        await wrapper.vm.$nextTick()
-        console.log("called",statsData)
-        await wrapper.vm.$nextTick()
-        console.log("stats is ",wrapper.vm.$data.stats)
-        console.log("called",statsData)
-        await wrapper.vm.$nextTick()
-        // expect(wrapper.vm.$data.stats).toEqual(statsData)
-       
+    await wrapper.vm.$nextTick();
+    wrapper.vm.$store.dispatch = jest.fn();
+    expect(wrapper.vm.$data.selected).toEqual("PremierLeague");
+    expect(wrapper.vm.$data.standings).toEqual(mockData);
+    await flushQueue();
+    expect(wrapper.vm.$data.stats).not.toBeUndefined;
+    expect(wrapper.vm.$data.stats).toEqual(m);
+    console.log(wrapper.vm.$store.state.leagues);
+    // expect(getters.loadLeagues).toBeCalled()
   });
-  it('On button click should select a league',async ()=>{
+  it("On button click should select a league", async () => {
     const but = wrapper.findAll(".button");
-    await but.at(0).trigger('click')
-    await wrapper.vm.$nextTick()
-    expect(wrapper.vm.$data.selected).toEqual('PremierLeague')
-    await but.at(1).trigger('click')
-    await wrapper.vm.$nextTick()
-    expect(wrapper.vm.$data.selected).toEqual('Laliga')
-    await but.at(2).trigger('click')
-    await wrapper.vm.$nextTick()
-    expect(wrapper.vm.$data.selected).toEqual('Ligue1')
-  })
-  
+    await but.at(0).trigger("click");
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.$data.selected).toEqual("PremierLeague");
+    await but.at(1).trigger("click");
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.$data.selected).toEqual("Laliga");
+    await but.at(2).trigger("click");
+    await wrapper.vm.$nextTick();
+    expect(wrapper.vm.$data.selected).toEqual("Ligue1");
+  });
 });

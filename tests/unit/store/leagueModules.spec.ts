@@ -1,12 +1,13 @@
 import { shallowMount, mount, createLocalVue } from "@vue/test-utils";
-import { URL } from "@/interafces/league-standings";
-import { leaguesModule } from "@/store/leagues";
+import { IStandings, URL } from "@/interafces/league-standings";
+import IStats from "@/interafces/stats";
+import { leaguesStore } from "@/store";
 import sinon from "sinon";
 import Vuex from "vuex";
 import * as leagues_api from "@/api/leagues";
 import * as stats_api from "@/api/stats";
 import mockData from "../../mockdata/leagues";
-import statsData from "../../mockdata/stats";
+import statsData from "../../mockdata/stats_mock";
 const Vue = createLocalVue();
 Vue.use(Vuex);
 const url: URL = {
@@ -41,30 +42,30 @@ describe("News module", () => {
     statsStub.returns(Promise.resolve(statsData));
   });
   it("Initial State Check", () => {
-    expect(leaguesModule.standings).toHaveLength(0);
-    expect(leaguesModule.standings).toEqual([]);
-    expect(leaguesModule.stats).toHaveLength(0);
-    expect(leaguesModule.stats).toEqual([]);
+    expect(leaguesStore.standings).toHaveLength(0);
+    expect(leaguesStore.standings).toEqual([]);
+    expect(leaguesStore.stats).toHaveLength(0);
+    expect(leaguesStore.stats).toEqual([]);
 
-    expect(leaguesModule.url).toEqual(url);
-    expect(leaguesModule.stats_url).toEqual(stats_url);
+    expect(leaguesStore.url).toEqual(url);
+    expect(leaguesStore.stats_url).toEqual(stats_url);
   });
   it("load leagues action should work", async () => {
-    await leaguesModule.loadLeagues("PremierLeague");
-    expect(leaguesModule.standings).toEqual(mockData);
+    await leaguesStore.loadLeagues("PremierLeague");
+    expect(leaguesStore.standings).toEqual(mockData);
   });
   it("mutation setStandings should Work", () => {
-    const testData = [{ a: 2, b: 1 }];
-    leaguesModule.setLeagues(testData);
-    expect(leaguesModule.standings).toEqual(testData);
+    const testData: IStandings[] = [];
+    leaguesStore.setLeagues(testData);
+    expect(leaguesStore.standings).toEqual(testData);
   });
   it("load News action Should work", async () => {
-    await leaguesModule.loadStats("PremierLeague");
-    expect(leaguesModule.stats).toEqual(statsData);
+    await leaguesStore.loadStats("PremierLeague");
+    expect(leaguesStore.stats).toEqual(statsData);
   });
   it("mutation setStats should Work", () => {
-    const testData = [{ a: 2, b: 1 }];
-    leaguesModule.setStats(testData);
-    expect(leaguesModule.stats).toEqual(testData);
+    const testData: IStats[] = [];
+    leaguesStore.setStats(testData);
+    expect(leaguesStore.stats).toEqual(testData);
   });
 });

@@ -53,6 +53,7 @@ export default class PointsTable extends Vue {
 
 .leaguetable {
   flex-basis: 70%;
+  margin-top: 2%;
 }
 td {
   width: 20%;

@@ -14,11 +14,10 @@ describe("Home.vue", () => {
   afterEach(() => {
     sinon.restore();
   });
-  it("Home Component render, compare shallow mount to snapshot",async () => {
+  it("Home Component render, compare shallow mount to snapshot", async () => {
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.getNews()).toEqual(mockData);
     await wrapper.vm.$nextTick();
     // mock.expects('loadNews').once()
-
   });
 });

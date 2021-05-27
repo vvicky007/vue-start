@@ -1,6 +1,236 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1621325446073" clover="3.2.0">
-  <project timestamp="1621325446073" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1621775961828" clover="3.2.0">
+  <project timestamp="1621775961828" name="All files">
+    <metrics statements="140" coveredstatements="140" conditionals="6" coveredconditionals="5" methods="31" coveredmethods="31" elements="177" coveredelements="176" complexity="0" loc="140" ncloc="140" packages="7" files="23" classes="23"/>
+    <package name="src.api">
+      <metrics statements="21" coveredstatements="21" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+      <file name="leagues.ts" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/src/api/leagues.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+      </file>
+      <file name="news.ts" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/src/api/news.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="stats.ts" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/src/api/stats.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components">
+      <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="Navbar.vue" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/src/components/Navbar.vue">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+      </file>
+      <file name="News.vue" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/src/components/News.vue">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+      </file>
+      <file name="Stats.vue" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/src/components/Stats.vue">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="28" count="4" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+      </file>
+      <file name="pointsTable.vue" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/src/components/pointsTable.vue">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="40" count="4" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.router">
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.ts" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/src/router/index.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.shared">
+      <metrics statements="8" coveredstatements="8" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="3"/>
+      <file name="collapsible.vue" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/src/shared/collapsible.vue">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+      <file name="validate.ts" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/src/shared/validate.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="2" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="3" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.store">
+      <metrics statements="46" coveredstatements="46" conditionals="2" coveredconditionals="2" methods="13" coveredmethods="13"/>
+      <file name="index.ts" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/src/store/index.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="7" count="131" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+      </file>
+      <file name="leagues.ts" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/src/store/leagues.ts">
+        <metrics statements="20" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="12" count="10" type="stmt"/>
+        <line num="14" count="10" type="stmt"/>
+        <line num="15" count="10" type="stmt"/>
+        <line num="16" count="10" type="stmt"/>
+        <line num="25" count="10" type="stmt"/>
+        <line num="39" count="5" type="stmt"/>
+        <line num="40" count="7" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="46" count="5" type="stmt"/>
+        <line num="50" count="5" type="stmt"/>
+        <line num="51" count="6" type="stmt"/>
+        <line num="52" count="6" type="stmt"/>
+        <line num="55" count="5" type="stmt"/>
+        <line num="56" count="7" type="stmt"/>
+        <line num="59" count="5" type="stmt"/>
+        <line num="60" count="6" type="stmt"/>
+        <line num="61" count="6" type="stmt"/>
+      </file>
+      <file name="news.ts" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/src/store/news.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="6" count="10" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="24" count="5" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+      </file>
+      <file name="store-accessor.ts" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/src/store/store-accessor.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="26" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.views">
+      <metrics statements="30" coveredstatements="30" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
+      <file name="Form.vue" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/src/views/Form.vue">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="5" type="stmt"/>
+        <line num="42" count="5" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+      </file>
+      <file name="Home.vue" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/src/views/Home.vue">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
+      </file>
+      <file name="Leagues.vue" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/src/views/Leagues.vue">
+        <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="101" count="2" type="stmt"/>
+        <line num="103" count="2" type="stmt"/>
+        <line num="104" count="2" type="stmt"/>
+        <line num="105" count="2" type="stmt"/>
+        <line num="114" count="2" type="stmt"/>
+        <line num="115" count="2" type="stmt"/>
+        <line num="116" count="2" type="stmt"/>
+        <line num="117" count="2" type="stmt"/>
+        <line num="119" count="2" type="stmt"/>
+        <line num="120" count="2" type="stmt"/>
+        <line num="121" count="2" type="stmt"/>
+        <line num="122" count="2" type="stmt"/>
+        <line num="125" count="3" type="stmt"/>
+        <line num="126" count="3" type="stmt"/>
+        <line num="127" count="3" type="stmt"/>
+        <line num="128" count="3" type="stmt"/>
+        <line num="129" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="tests.mockdata">
+      <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="leagues.ts" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/tests/mockdata/leagues.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="143" count="2" type="stmt"/>
+      </file>
+      <file name="leagues_api_mock.ts" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/tests/mockdata/leagues_api_mock.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3850" count="1" type="stmt"/>
+      </file>
+      <file name="news.ts" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/tests/mockdata/news.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="176" count="2" type="stmt"/>
+      </file>
+      <file name="news_api_mock.ts" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/tests/mockdata/news_api_mock.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="1046" count="1" type="stmt"/>
+      </file>
+      <file name="stats_api.ts" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/tests/mockdata/stats_api.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="28567" count="1" type="stmt"/>
+      </file>
+      <file name="stats_mock.ts" path="/home/doodleblue/Desktop/FeelFootball/vue/feelfootball-vue/tests/mockdata/stats_mock.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

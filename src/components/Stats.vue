@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class = "stats">
     <h3>Top Scorers</h3>
     <table v-if="stats">
       <tr>
@@ -39,5 +39,8 @@ td {
 }
 tr {
   border: 1px solid black;
+}
+.stats{
+  margin-top: 2%;
 }
 </style>

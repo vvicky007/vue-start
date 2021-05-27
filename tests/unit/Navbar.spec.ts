@@ -42,7 +42,7 @@ describe("Navbar.vue", () => {
       "router-link-exact-active"
     );
     expect(links.at(1).attributes().class).toContain("router-link-active");
-    expect(wrapper.vm.$router.currentRoute.name).toEqual('Leagues')
+    expect(wrapper.vm.$router.currentRoute.name).toEqual("Leagues");
     await links.at(2).trigger("click");
     await wrapper.vm.$nextTick();
     expect(links.at(2).attributes().href).toEqual("/form");
@@ -50,7 +50,7 @@ describe("Navbar.vue", () => {
       "router-link-exact-active"
     );
     expect(links.at(2).attributes().class).toContain("router-link-active");
-    expect(wrapper.vm.$router.currentRoute.name).toEqual('Form')
+    expect(wrapper.vm.$router.currentRoute.name).toEqual("Form");
   });
 
   afterEach(() => {
